@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Panel - Applications</h2>
+        <table>
+            <tr><th>Name</th><th>Email</th><th>Skills</th><th>LinkedIn</th></tr>
+            {% for sub in submissions %}
+            <tr>
+                <td>{{ sub.name }}</td>
+                <td>{{ sub.email }}</td>
+                <td>{{ sub.skills }}</td>
+                <td><a href="{{ sub.linkedin }}" target="_blank">Profile</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
