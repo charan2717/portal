@@ -6,15 +6,27 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Join a Startup on FounderOS</h1>
+    <header class="header">
+        <h1>Join the FounderOS Team</h1>
+        <p>Your gateway to working with high-growth startups!</p>
+    </header>
+    <main class="container">
+        <h2>Apply for a Role</h2>
         <form action="/submit" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required><br>
-            <input type="email" name="email" placeholder="Your Email" required><br>
-            <input type="text" name="skills" placeholder="Your Skills" required><br>
+            <input type="text" name="name" placeholder="Full Name" required><br>
+            <input type="email" name="email" placeholder="Email Address" required><br>
+            <select name="role" required>
+                <option value="">Select Role</option>
+                <option value="Frontend Developer">Frontend Developer</option>
+                <option value="Backend Developer">Backend Developer</option>
+                <option value="Full Stack Developer">Full Stack Developer</option>
+                <option value="Database Engineer">Database Engineer</option>
+                <option value="Marketing Team">Marketing Team</option>
+            </select><br>
+            <input type="text" name="skills" placeholder="Skills (comma separated)" required><br>
             <input type="url" name="linkedin" placeholder="LinkedIn Profile URL"><br>
             <button type="submit">Submit Application</button>
         </form>
-    </div>
+    </main>
 </body>
 </html>
