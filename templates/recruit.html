@@ -428,7 +428,7 @@
             
             <div class="form-container">
                 <h3>Apply for a Role</h3>
-                <form action="/submit" method="POST" id="applicationForm">
+                <form action="{{ url_for('submit') }}" method="POST" id="applicationForm">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Full Name" required>
                     </div>
