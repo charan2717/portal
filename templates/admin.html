@@ -9,11 +9,12 @@
     <div class="container">
         <h2>Admin Panel - Applications</h2>
         <table>
-            <tr><th>Name</th><th>Email</th><th>Skills</th><th>LinkedIn</th></tr>
+            <tr><th>Name</th><th>Email</th><th>Role</th><th>Skills</th><th>LinkedIn</th></tr>
             {% for sub in submissions %}
             <tr>
                 <td>{{ sub.name }}</td>
                 <td>{{ sub.email }}</td>
+                <td>{{ sub.role }}</td>
                 <td>{{ sub.skills }}</td>
                 <td><a href="{{ sub.linkedin }}" target="_blank">Profile</a></td>
             </tr>
