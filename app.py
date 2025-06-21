@@ -26,6 +26,7 @@ def submit():
     form_data = {
         "name": request.form["name"],
         "email": request.form["email"],
+        "role": request.form["role"],
         "skills": request.form["skills"],
         "linkedin": request.form["linkedin"],
     }
