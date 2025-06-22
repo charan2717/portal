@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-# Direct PostgreSQL connection string (for demo purposes only)
+# PostgreSQL connection string (OK for dev, use env var for production)
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://database_b38b_user:5cukegbGC7o0jc3NyrPTF9O69Ao24fb9@dpg-d1bntqadbo4c73c92a10-a/database_b38b"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -18,9 +18,8 @@ class Submission(db.Model):
     skills = db.Column(db.String(200))
     linkedin = db.Column(db.String(200))
 
-# Create tables on first request
-@app.before_first_request
-def create_tables():
+# Ensure DB tables are created
+with app.app_context():
     db.create_all()
 
 @app.route("/")
